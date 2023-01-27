@@ -1,12 +1,13 @@
 // export { Tokenizer } from "../tokenizers/Tokenizer";
 import { T5ForConditionalGeneration } from "./transformers/T5ForConditionalGeneration.js";
 import { AutoTokenizer } from "./tokenizers/AutoTokenizer.js";
+import path from "path";
 
 const generate = async () => {
   const command = {
     inputText: "translate English to French: The universe is a dark forest",
     modelId: "t5-small",
-    modelsPath: "models",
+    modelsPath: path.resolve() + "/models",
     maxLength: 50,
     topK: 0,
   };
